@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.Toolbar;
 
@@ -29,6 +30,7 @@ int total_price_item;
     int discounted_rate;
 int total_discount_price;
 int total_price_after_discount;
+TextView order_total_amount, order_discount, order_full_amount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,17 +50,21 @@ int total_price_after_discount;
             while(products_cursor.moveToNext()){
                 product p = new product ( products_cursor.getString(1), products_cursor.getString(3),products_cursor.getString(5),products_cursor.getInt(4), products_cursor.getInt(2), products_cursor.getInt(0));
                 products.add(p);
-
             }
             checkout_items_list.setAdapter(new purchased_item_adapter(products, this));
         }
-        discount_rate=getIntent().getStringExtra("discount");
+         order_discount = findViewById(R.id.order_discount);
+         order_full_amount = findViewById(R.id.order_full_amounts);
+         order_total_amount = findViewById(R.id.order_total_amount);
+         discount_rate=getIntent().getStringExtra("discount");
          total_price_item=new dbhelper(Billing_Activity.this).getTotalOfAmount(userinfo.get(0).email);
          discounted_rate=(Integer.parseInt(discount_rate)*total_price_item)/100;
          total_discount_price=total_price_item-discounted_rate;
          total_price_after_discount=total_price_item-discounted_rate;
-        Log.e("discount%",String.valueOf(discounted_rate));
-        Log.e("total price",String.valueOf(total_discount_price));
+         order_discount.setText("Rs" + discounted_rate);
+         order_total_amount.setText("Rs" + String.valueOf(new dbhelper(Billing_Activity.this).getTotalOfAmount(userinfo.get(0).email)));
+         order_total_amount.setText("Rs" + String.valueOf(total_price_after_discount));
+
     }
 
 
