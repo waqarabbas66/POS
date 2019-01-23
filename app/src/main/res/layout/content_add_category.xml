@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".add_category"
+    tools:showIn="@layout/activity_add_category">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:id="@+id/category_add_img"
+        android:src="@drawable/add_image"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/product_category"
+        android:hint="Enter Category of Product"
+        android:layout_below="@id/category_add_img"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="20dp"
+        >
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/category_add_name"
+            android:inputType="text"
+            />
+    </android.support.design.widget.TextInputLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_add_btn"
+        android:layout_below="@id/product_category"
+        android:background="@color/colorPrimary"
+        android:text="Add Category"
+        android:textColor="#fff"/>
+</RelativeLayout>

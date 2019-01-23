@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+     <item
+         android:id="@+id/add_product"
+         android:title="Add Product"
+          android:icon="@drawable/addproduct"
+         />
+        <item
+            android:id="@+id/orders_list"
+            android:title="Orders List"
+            android:icon="@drawable/addlist"
+            />
+
+        <item
+            android:id="@+id/add_catagory"
+            android:title="Add Catagory"
+            android:icon="@drawable/add_item"
+            />
+        <item
+            android:id="@+id/add_by_barcode"
+            android:title="Add By Barcode Scanner"
+            android:icon="@drawable/barcode_scan_mobile"
+            />
+        <item
+            android:id="@+id/billing"
+            android:title="Billing"
+            android:icon="@drawable/billing2"
+            />
+
+        <item
+            android:id="@+id/invoice_making"
+            android:title="Make Invoice"
+            android:icon="@drawable/make_invoice"
+            />
+        <item
+            android:id="@+id/items"
+            android:title="Add Items"
+            android:icon="@drawable/food"
+            />
+        <item
+            android:id="@+id/sign_out"
+            android:title="Sign Out"
+            android:icon="@drawable/logout"
+            />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
